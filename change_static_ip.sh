@@ -7,7 +7,7 @@ DNS="8.8.8.8,8.8.4.4"      # Google DNS，可根据需要更改
 INTERFACE="ens33"          # 你的网络接口，使用 `ip a` 检查
 
 # 备份原配置
-sudo cp /etc/netplan/50-cloud-init.yaml.yaml /etc/netplan/50-cloud-init.yaml.yaml.bak
+sudo cp /etc/netplan/50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml.bak
 
 # 写入新的 Netplan 配置
 echo "network:
@@ -20,7 +20,7 @@ echo "network:
       gateway4: $GATEWAY
       nameservers:
         addresses: [$DNS]
-      dhcp4: no" | sudo tee /etc/netplan/50-cloud-init.yaml.yaml
+      dhcp4: no" | sudo tee /etc/netplan/50-cloud-init.yaml
 
 # 应用网络配置
 sudo netplan apply
