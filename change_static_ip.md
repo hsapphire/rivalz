@@ -1,0 +1,1 @@
+wget -O change_static_ip.sh https://raw.githubusercontent.com/hsapphire/rivalz/refs/heads/main/change_static_ip.sh

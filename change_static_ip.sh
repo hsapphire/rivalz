@@ -12,11 +12,9 @@ sudo cp /etc/netplan/50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml.bak
 # 写入新的 Netplan 配置
 echo "network:
   version: 2
-  renderer: networkd
   ethernets:
     $INTERFACE:
-      addresses:
-        - $STATIC_IP/24
+      addresses: $STATIC_IP/24
       gateway4: $GATEWAY
       nameservers:
         addresses: [$DNS]
